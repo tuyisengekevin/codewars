@@ -1,0 +1,17 @@
+function movie(card, ticket, perc) {
+  let n = 0;
+  let systemB = card;
+  let lastTicketPrice = ticket * perc;
+  
+  while (Math.ceil(systemB) >= ticket * n) {
+    n++;
+    systemB += lastTicketPrice;
+    lastTicketPrice *= perc;
+  }
+  
+  return n;
+}
+
+// Test examples
+console.log(movie(500, 15, 0.9)); // 43
+console.log(movie(100, 10, 0.95)); // 24
