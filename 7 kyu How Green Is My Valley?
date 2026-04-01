@@ -1,0 +1,15 @@
+function makeValley(arr) {
+  if (!arr.length) return [];
+
+  let sorted = arr.slice().sort((a, b) => a - b);//slice make a copy and sort arrange it
+
+  let left = [];
+  let right = [];
+
+  while (sorted.length) {
+    left.push(sorted.pop());//pop remove last element
+    if (sorted.length) right.unshift(sorted.pop());//unshift put element at start
+  }
+
+  return [...left, ...right];
+}
