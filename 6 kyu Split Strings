@@ -1,0 +1,13 @@
+function solution(str){
+   let st=[]
+   let i=0
+   if(str.length%2!==0){ str+='_'}
+   
+   for (i=0;i<str.length;i+=2){
+       let twochar=str[i]+str[i+1]
+       st.push(twochar);
+   }
+   
+    return st;
+}
+console.log(solution('hello'));
