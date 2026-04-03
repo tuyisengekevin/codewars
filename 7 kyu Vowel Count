@@ -1,0 +1,12 @@
+function getCount(str) {
+let count=0;
+let vowel=['e','a','i','o','u'];
+let dup=str.split('')// duplication
+for(let x=0;x<dup.length;x++){
+    for(let i=0;i<=4;i++){
+   dup[x]===vowel[i]?count++:count;
+    }
+}
+return count;
+}
+console.log(getCount('helloeeee'))
