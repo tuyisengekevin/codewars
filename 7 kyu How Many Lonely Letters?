@@ -1,0 +1,25 @@
+function countLonelyLetters(text) {
+  let letters = text.toLowerCase().match(/[a-z]/g) || [];
+  let freq = {};
+  let count = 0;
+
+  // count frequency
+  for (let char of letters) {
+    freq[char] = (freq[char] || 0) + 1;
+  }
+
+  // check lonely letters
+  for (let char in freq) {
+    if (freq[char] === 1) {
+      let code = char.charCodeAt(0);
+      let prev = String.fromCharCode(code - 1);
+      let next = String.fromCharCode(code + 1);
+
+      if (!freq[prev] && !freq[next]) {
+        count++;
+      }
+    }
+  }
+
+  return count;
+}
