@@ -1,0 +1,13 @@
+function maxTriSum(numbers){
+  let sorted = numbers.sort((a,b)=>b-a);
+  let unique = [];
+
+  for(let i = 0; i < sorted.length; i++){
+    if(sorted[i] !== sorted[i-1]) {
+      unique.push(sorted[i]);
+    }
+    if(unique.length === 3) break;
+  }
+
+  return unique[0] + unique[1] + unique[2];
+}
