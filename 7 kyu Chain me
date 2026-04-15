@@ -1,0 +1,4 @@
+function chain(input, fs) {
+let ans= fs.reduce((acc,fn)=> fn(acc)   ,input)
+return ans
+}
