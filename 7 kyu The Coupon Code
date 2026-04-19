@@ -6,7 +6,7 @@ let obj = {
 function checkCoupon(enteredCode, correctCode, currentDate, expirationDate) {
   if (enteredCode !== correctCode) return false;
 
-  // Split and clean dates
+  // Split and clean dateS
   let current = currentDate.split(' ');
   let expire = expirationDate.split(' ');
 
