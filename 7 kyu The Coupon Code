@@ -1,0 +1,39 @@
+let obj = {
+  January:1, February:2, March:3, April:4, May:5, June:6,
+  July:7, August:8, September:9, October:10, November:11, December:12
+};
+
+function checkCoupon(enteredCode, correctCode, currentDate, expirationDate) {
+  if (enteredCode !== correctCode) return false;
+
+  // Split and clean dates
+  let current = currentDate.split(' ');
+  let expire = expirationDate.split(' ');
+
+  // Fix formats
+  let curMonth = current[0][0].toUpperCase() + current[0].slice(1).toLowerCase();
+  let curDay = parseInt(current[1]); // removes comma automatically
+  let curYear = parseInt(current[2]);
+
+  let expMonth = expire[0][0].toUpperCase() + expire[0].slice(1).toLowerCase();
+  let expDay = parseInt(expire[1]);
+  let expYear = parseInt(expire[2]);
+
+  // Compare year → month → day
+  if (curYear > expYear) return false;
+  if (curYear < expYear) return true;
+
+  if (obj[curMonth] > obj[expMonth]) return false;
+  if (obj[curMonth] < obj[expMonth]) return true;
+
+  return curDay <= expDay;
+} 
+
+OR 
+function checkCoupon(enteredCode, correctCode, currentDate, expirationDate) {
+  if (enteredCode !== correctCode) return false;
+
+  return new Date(currentDate) <= new Date(expirationDate);
+}
+
+console.log(checkCoupon('123','123','january 14, 2015','july 13, 2015')); // true
