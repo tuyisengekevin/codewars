@@ -30,3 +30,29 @@ return fct(s)
 }
 console.log(oper(rot,"xZBV\njsbS\nJcpN\nfVnP"))
 console.log(oper(selfieAndRot,"xZBV\njsbS\nJcpN\nfVnP"))
+// ai better version
+
+function rot(strng) {
+  return strng
+    .split('\n')
+    .reverse()
+    .map(el => el.split('').reverse().join(''))
+    .join('\n');
+}
+
+function selfieAndRot(strng) {
+  const lines = strng.split('\n');
+  const len = lines[0].length;
+
+  const top = lines.map(line => line + '.'.repeat(len));
+
+  const bottom = [...lines]
+    .reverse()
+    .map(line => '.'.repeat(len) + line.split('').reverse().join(''));
+
+  return top.join('\n') + '\n' + bottom.join('\n');
+}
+
+function oper(fct, s) {
+  return fct(s);
+}
