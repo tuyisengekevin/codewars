@@ -1,0 +1,32 @@
+
+function rot(strng) {
+let arr=strng.split('\n').reverse()
+let ans=[]
+for(el of arr){
+    let inv= el.split('').reverse().join('')
+    ans.push(inv)
+}
+return ans.join('\n');
+
+}
+function selfieAndRot(strng) {
+  let array=strng.split('\n')
+  let rvs=array.reverse()
+  let og=[]
+  let rvrs=[]
+for(el of array){
+    let dot=el.split('').length
+    og.push(el+'.'.repeat(dot))
+}
+for(el of rvs ){
+    let dot=el.split('').length
+    let ele= el.split('').reverse().join('')
+    rvrs.push('.'.repeat(dot)+ele)
+}
+  return og.reverse().join('\n')+'\n'.concat(rvrs.join('\n'))
+}
+function oper(fct, s) {
+return fct(s)
+}
+console.log(oper(rot,"xZBV\njsbS\nJcpN\nfVnP"))
+console.log(oper(selfieAndRot,"xZBV\njsbS\nJcpN\nfVnP"))
