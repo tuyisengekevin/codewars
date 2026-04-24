@@ -1,0 +1,12 @@
+
+function findUnique(numbers) {
+  let obj = {};
+
+  for (let el of numbers) {
+    obj[el] = (obj[el] || 0) + 1;
+  }
+
+  for (let key in obj) {
+    if (obj[key] === 1) return Number(key);
+  }
+}
