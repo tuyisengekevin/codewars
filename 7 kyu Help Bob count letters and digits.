@@ -1,0 +1,16 @@
+function countLettersAndDigits(input){
+
+    let letters = 0;
+    let s = 0;
+
+    input.split("").forEach((el) =>
+
+        el.match(/[a-z]/i) ||  el.match(/[0-9]/) 
+        ? letters++
+        : s++
+    );
+
+    return letters;
+}
+
+console.log(countLettersAndDigits("heeel12"));
