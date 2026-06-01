@@ -1,0 +1,6 @@
+function XO(str) {
+    let obj={};
+ str.toLowerCase().split('').reduce((acc,nex)=>obj[nex] =(obj[nex]||0)+1,str[0]);
+ return (obj['x']||0)===(obj['o']||0);
+}
+console.log(XO("xxxooxo"))
