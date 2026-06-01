@@ -1,0 +1,5 @@
+function sumTwoSmallestNumbers(numbers) {  
+let ascend=numbers.sort((a,b)=>a-b);
+return ascend[0]+ascend[1];
+}
+console.log(sumTwoSmallestNumbers([1,3,2,4,5]) )
