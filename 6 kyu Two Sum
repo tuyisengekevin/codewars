@@ -1,0 +1,13 @@
+function twoSum(numbers, target) {
+  let ans=[];
+    for(let i=0;i<=numbers.length;i++){
+  for(nbr of numbers){
+ if(numbers[i]+nbr===target && numbers.indexOf(nbr)!==i) {
+   ans.push(i);ans.push(numbers.indexOf(nbr));
+ }
+    
+  }}
+  
+  return [...new Set(ans)];
+}
+console.log(twoSum([2, 2, 3], 4));
